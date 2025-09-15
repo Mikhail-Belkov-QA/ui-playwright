@@ -1,8 +1,8 @@
-package com.pages;
+package pages;
 
-import com.components.Header;
+import components.Header;
 import com.microsoft.playwright.Locator;
-import com.models.ShipInfo;
+import models.ShipInfo;
 import io.qameta.allure.Step;
 
 public final class CartPage extends BasePage{

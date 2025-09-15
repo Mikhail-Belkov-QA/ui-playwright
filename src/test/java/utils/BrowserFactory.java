@@ -1,10 +1,10 @@
-package com.utils;
+package utils;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Playwright;
 
-import static com.config.ConfigurationManager.config;
+import static config.ConfigurationManager.config;
 
 public enum BrowserFactory {
 

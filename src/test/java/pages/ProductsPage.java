@@ -1,9 +1,9 @@
-package com.pages;
+package pages;
 
-import com.components.Header;
-import com.components.SideNavMenu;
+import components.Header;
+import components.SideNavMenu;
 import com.microsoft.playwright.Locator;
-import com.utils.BasePageFactory;
+import utils.BasePageFactory;
 import io.qameta.allure.Step;
 
 public final class ProductsPage extends BasePage {

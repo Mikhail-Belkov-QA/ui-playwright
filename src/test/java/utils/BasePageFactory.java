@@ -1,7 +1,7 @@
-package com.utils;
+package utils;
 
 import com.microsoft.playwright.Page;
-import com.pages.BasePage;
+import pages.BasePage;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

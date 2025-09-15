@@ -1,10 +1,10 @@
-package com.pages;
+package pages;
 
 import com.microsoft.playwright.Locator;
-import com.utils.BasePageFactory;
+import utils.BasePageFactory;
 import io.qameta.allure.Step;
 
-import static com.config.ConfigurationManager.config;
+import static config.ConfigurationManager.config;
 
 public final class LoginPage extends BasePage {
 

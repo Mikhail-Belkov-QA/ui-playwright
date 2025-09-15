@@ -1,4 +1,4 @@
-package com.config;
+package config;
 
 import org.aeonbits.owner.Config;
 // ./gradlew clean test -Dbrowser=firefox

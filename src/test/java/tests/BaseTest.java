@@ -1,14 +1,14 @@
-package com.tests;
+package tests;
 
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
-import com.pages.BasePage;
-import com.pages.LoginPage;
-import com.utils.BasePageFactory;
-import com.utils.BrowserManager;
+import pages.BasePage;
+import pages.LoginPage;
+import utils.BasePageFactory;
+import utils.BrowserManager;
 import io.qameta.allure.Attachment;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.*;
@@ -19,7 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Optional;
 
-import static com.config.ConfigurationManager.config;
+import static config.ConfigurationManager.config;
 import static com.github.automatedowl.tools.AllureEnvironmentWriter.allureEnvironmentWriter;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)

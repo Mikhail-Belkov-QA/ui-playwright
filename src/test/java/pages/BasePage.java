@@ -1,8 +1,8 @@
-package com.pages;
+package pages;
 
 import com.microsoft.playwright.Page;
 
-import static com.config.ConfigurationManager.config;
+import static config.ConfigurationManager.config;
 
 public abstract class BasePage {
 

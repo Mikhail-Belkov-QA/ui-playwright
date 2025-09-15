@@ -1,6 +1,6 @@
-package com.tests;
+package tests;
 
-import com.pages.ProductsPage;
+import pages.ProductsPage;
 import org.junit.jupiter.api.Test;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
