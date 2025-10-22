@@ -1,12 +1,16 @@
 package tests;
 
 import models.ShipInfo;
+import models.User;
+import org.junit.jupiter.api.extension.ExtendWith;
 import pages.CartPage;
 import pages.ProductsPage;
 import org.junit.jupiter.api.Test;
+import parameters.RandomUser;
+import parameters.RandomUserResolver;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
-
+@ExtendWith(RandomUserResolver.class)
 public class ProductsTest extends BaseTest {
 
     @Test
@@ -28,7 +32,7 @@ public class ProductsTest extends BaseTest {
     }
 
     @Test
-    public void testAddItemToCartAndBuy() {
+    public void testAddItemToCartAndBuy(@RandomUser User testUser) {
         ProductsPage productsPage = loginPage.loginAs("standard_user", "secret_sauce");
         String firstItemName = productsPage.getProductNames().first().textContent();
 
@@ -37,9 +41,9 @@ public class ProductsTest extends BaseTest {
         assertThat(cartPage.getItems()).containsText(firstItemName);
 
         ShipInfo shipInfo = ShipInfo.builder()
-                .firstName("Misha")
-                .lastName("Belkov")
-                .zip("123456")
+                .firstName(testUser.getName())
+                .lastName(testUser.getLastName())
+                .zip(testUser.getZipCode())
                 .build();
 
         cartPage.clickOnCheckout().fillInfo(shipInfo).clickOnContinue().clickOnFinish();
