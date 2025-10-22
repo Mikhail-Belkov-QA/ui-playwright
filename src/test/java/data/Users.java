@@ -20,7 +20,8 @@ public enum Users {
     PROBLEM_USER("problem_user", ConfigurationManager.config().password()),
     PERFORMANCE_GLITCH_USER("performance_glitch_user", ConfigurationManager.config().password()),
     ERROR_USER("error_user", ConfigurationManager.config().password()),
-    VISUAL_USER("visual_user", ConfigurationManager.config().password());
+    VISUAL_USER("visual_user", ConfigurationManager.config().password()),
+    WRONG_USER("wrong", ConfigurationManager.config().passwordWrong());
 
     private final String LOGIN;
     private final String PASSWORD;

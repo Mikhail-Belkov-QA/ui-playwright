@@ -15,6 +15,9 @@ public interface Configuration extends Config {
     @Key("base.url")
     String baseUrl();
 
+    @Key("passwordWrong")
+    String passwordWrong();
+
     @Key("base.test.video.path")
     String baseTestVideoPath();
 
