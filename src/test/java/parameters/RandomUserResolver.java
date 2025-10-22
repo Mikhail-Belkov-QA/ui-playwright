@@ -22,7 +22,7 @@ public class RandomUserResolver implements ParameterResolver {
             User user = new User();
             user.setName("TestUser " + Math.abs(random.nextInt()));
             user.setLastName("TestJob " + Math.abs(random.nextInt()));
-            user.setZipCode("1" + Math.abs(random.nextInt()));
+            user.setZipCode(Math.abs(random.nextInt()));
             return user;
         }
 

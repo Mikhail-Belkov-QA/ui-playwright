@@ -10,19 +10,21 @@ import parameters.RandomUser;
 import parameters.RandomUserResolver;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
+import static data.Users.STANDART_USER;
+
 @ExtendWith(RandomUserResolver.class)
 public class ProductsTest extends BaseTest {
 
     @Test
     public void testSuccessfulLogout() {
-        loginPage.loginAs("standard_user", "secret_sauce")
+        loginPage.loginAs(STANDART_USER.getLOGIN(), STANDART_USER.getPASSWORD())
                 .clickOnLogout();
         assertThat(page).hasURL("https://www.saucedemo.com/");
     }
 
     @Test
     public void testSortItems() {
-        ProductsPage productsPage = loginPage.loginAs("standard_user", "secret_sauce");
+        ProductsPage productsPage = loginPage.loginAs(STANDART_USER.getLOGIN(), STANDART_USER.getPASSWORD());
 
         assertThat(productsPage.getProductNames().first()).hasText("Sauce Labs Backpack");
 
@@ -33,7 +35,7 @@ public class ProductsTest extends BaseTest {
 
     @Test
     public void testAddItemToCartAndBuy(@RandomUser User testUser) {
-        ProductsPage productsPage = loginPage.loginAs("standard_user", "secret_sauce");
+        ProductsPage productsPage = loginPage.loginAs(STANDART_USER.getLOGIN(), STANDART_USER.getPASSWORD());
         String firstItemName = productsPage.getProductNames().first().textContent();
 
         CartPage cartPage = productsPage.addItemToCart(firstItemName).clickOnCart();
@@ -43,7 +45,7 @@ public class ProductsTest extends BaseTest {
         ShipInfo shipInfo = ShipInfo.builder()
                 .firstName(testUser.getName())
                 .lastName(testUser.getLastName())
-                .zip(testUser.getZipCode())
+                .zip(testUser.getZipCode().toString())
                 .build();
 
         cartPage.clickOnCheckout().fillInfo(shipInfo).clickOnContinue().clickOnFinish();

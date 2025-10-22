@@ -9,6 +9,9 @@ public interface Configuration extends Config {
     @Key("allure.results.directory")
     String allureResultsDir();
 
+    @Key("password")
+    String password();
+
     @Key("base.url")
     String baseUrl();
 

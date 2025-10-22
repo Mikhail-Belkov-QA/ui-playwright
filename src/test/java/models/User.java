@@ -3,9 +3,9 @@ package models;
 public class User {
     private String name;
     private String lastName;
-    private String zipCode;
+    private Integer zipCode;
 
-    public User(String name, String lastName, String zipCode) {
+    public User(String name, String lastName, Integer zipCode) {
         this.name = name;
         this.lastName = lastName;
         this.zipCode = zipCode;
@@ -30,11 +30,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getZipCode() {
+    public Integer getZipCode() {
         return zipCode;
     }
 
-    public void setZipCode(String zipCode) {
+    public void setZipCode(Integer zipCode) {
         this.zipCode = zipCode;
     }
 }
