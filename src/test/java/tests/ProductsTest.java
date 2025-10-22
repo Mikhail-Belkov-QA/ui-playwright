@@ -37,8 +37,8 @@ public class ProductsTest extends BaseTest {
         assertThat(cartPage.getItems()).containsText(firstItemName);
 
         ShipInfo shipInfo = ShipInfo.builder()
-                .firstName("Oleg")
-                .lastName("ThreadQA")
+                .firstName("Misha")
+                .lastName("Belkov")
                 .zip("123456")
                 .build();
 
