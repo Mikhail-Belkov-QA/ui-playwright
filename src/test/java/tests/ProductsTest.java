@@ -2,17 +2,15 @@ package tests;
 
 import models.ShipInfo;
 import models.User;
-import org.junit.jupiter.api.extension.ExtendWith;
 import pages.CartPage;
 import pages.ProductsPage;
 import org.junit.jupiter.api.Test;
 import parameters.RandomUser;
-import parameters.RandomUserResolver;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static data.Users.STANDART_USER;
 
-@ExtendWith(RandomUserResolver.class)
+@RandomUser
 public class ProductsTest extends BaseTest {
 
     @Test
